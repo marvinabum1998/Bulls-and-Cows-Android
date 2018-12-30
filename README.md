@@ -1,5 +1,5 @@
 # Bulls-and-Cows-Android
-This is the repository of the Bulls and Cow game, created for the android platform and contains blockchain integration.
+This is the repository of the Bulls and Cows game, created for the android platform and contains blockchain integration.
 
 To-do list:
 - Port the application over to Android Studio (in progress)
