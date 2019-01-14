@@ -1,6 +1,5 @@
 package com.marvinabum.bullsandcows;
 
-import android.net.Credentials;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -9,13 +8,15 @@ import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
 import android.view.View;
+import android.widget.ImageButton;
+
 import org.web3j.protocol.Web3j;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
-public class MainMenu extends AppCompatActivity {
+public class RulesScreen extends AppCompatActivity {
 
-    private Button rulesBtn;
+    private ImageButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,26 +26,22 @@ public class MainMenu extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_rules_screen);
         getSupportActionBar().hide();
 
-        rulesBtn = (Button) findViewById(R.id.rulesBtn);
-        rulesBtn.setOnClickListener(new View.OnClickListener() {
+        backBtn = (ImageButton) findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRulesScreen();
+                openMainMenu();
             }
         });
     }
 
-        public void openRulesScreen() {
-            Intent intent = new Intent(this, RulesScreen.class);
-            startActivity(intent);
-        }
-
-        public static void main() {
-
-            org.web3j.crypto.Credentials credentials = "0x6cdc4ad5F20Ade8c7D2586f71Bd06a29B32867B7";
-        Bullsandcows bc = new Bullsandcows(0x6cdc4ad5F20Ade8c7D2586f71Bd06a29B32867B7, )
-        }
+    public void openMainMenu() {
+        Intent intent = new Intent(this, MainMenu.class);
+        startActivity(intent);
+    }
 }
+
+
