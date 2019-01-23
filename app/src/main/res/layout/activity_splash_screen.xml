@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White"
     tools:context="com.marvinabum.bullsandcows.SplashScreen">
 
     <ImageView
@@ -31,6 +32,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Bulls and Cows"
+        android:textColor="@color/Black"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +49,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="cursive"
         android:text="Made with Blockchain Technology"
+        android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.959"

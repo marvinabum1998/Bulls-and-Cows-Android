@@ -1,5 +1,7 @@
 package com.marvinabum.bullsandcows;
 
+import com.kenai.jffi.Main;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,13 +9,19 @@ import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
 import org.web3j.abi.datatypes.generated.Uint256;
+import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
+import org.web3j.crypto.WalletUtils;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.RemoteCall;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
+import org.web3j.protocol.http.HttpService;
+import org.web3j.protocol.core.methods.response.Web3ClientVersion;
 import org.web3j.tx.Contract;
+import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
+import javax.crypto.Cipher;
 
 /**
  * <p>Auto generated code.
@@ -35,6 +43,12 @@ public class Bullsandcows extends Contract {
 
     public static final String FUNC_CHECKGUESS = "checkGuess";
 
+    private final static String PRIVATE_KEY = "2A4072121BDD59246A2DB4E912F1D83B964A8127FC17C27869FE000986E055CF";
+
+    private final static BigInteger GAS_LIMIT = BigInteger.valueOf(21000L);
+
+    private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
+
     @Deprecated
     protected Bullsandcows(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
         super(BINARY, contractAddress, web3j, credentials, gasPrice, gasLimit);
@@ -53,32 +67,38 @@ public class Bullsandcows extends Contract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
+    protected Bullsandcows(String contractBinary, String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider gasProvider) {
+        super(contractBinary, contractAddress, web3j, transactionManager, gasProvider);
+    }
+
     public RemoteCall<BigInteger> getCows() {
-        final Function function = new Function(FUNC_GETCOWS, 
-                Arrays.<Type>asList(), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        final Function function = new Function(FUNC_GETCOWS,
+                Arrays.<Type>asList(),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {
+                }));
         return executeRemoteCallSingleValueReturn(function, BigInteger.class);
     }
 
     public RemoteCall<TransactionReceipt> setPosition(BigInteger secret) {
         final Function function = new Function(
-                FUNC_SETPOSITION, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(secret)), 
+                FUNC_SETPOSITION,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(secret)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
 
     public RemoteCall<BigInteger> getBulls() {
-        final Function function = new Function(FUNC_GETBULLS, 
-                Arrays.<Type>asList(), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        final Function function = new Function(FUNC_GETBULLS,
+                Arrays.<Type>asList(),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {
+                }));
         return executeRemoteCallSingleValueReturn(function, BigInteger.class);
     }
 
     public RemoteCall<TransactionReceipt> checkGuess(BigInteger guess) {
         final Function function = new Function(
-                FUNC_CHECKGUESS, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(guess)), 
+                FUNC_CHECKGUESS,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(guess)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }

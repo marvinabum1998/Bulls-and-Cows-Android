@@ -16,6 +16,7 @@ import org.web3j.tx.gas.ContractGasProvider;
 public class MainMenu extends AppCompatActivity {
 
     private Button rulesBtn;
+    private Button newGameBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +36,24 @@ public class MainMenu extends AppCompatActivity {
                 openRulesScreen();
             }
         });
+
+        newGameBtn = (Button) findViewById(R.id.newgamebtn);
+        newGameBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewGame();
+            }
+        });
     }
 
-        public void openRulesScreen() {
-            Intent intent = new Intent(this, RulesScreen.class);
-            startActivity(intent);
-        }
 
-        public static void main() {
+    public void openRulesScreen() {
+        Intent intent2 = new Intent(this, RulesScreen.class);
+        startActivity(intent2);
+    }
 
-            org.web3j.crypto.Credentials credentials = "0x6cdc4ad5F20Ade8c7D2586f71Bd06a29B32867B7";
-        Bullsandcows bc = new Bullsandcows(0x6cdc4ad5F20Ade8c7D2586f71Bd06a29B32867B7, )
-        }
+    public void openNewGame() {
+        Intent intent3 = new Intent(this, NewGameScreen.class);
+        startActivity(intent3);
+    }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/White"
+    android:background="@drawable/gradient"
     tools:context=".MainMenu">
 
     <Button
@@ -40,6 +40,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newgamebtn"
         app:layout_constraintVertical_bias="0.194" />
+
+    <Button
+        android:id="@+id/ibtBtn"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:background="@color/DarkPurple"
+        android:text="Introducing Blockchain Technology"
+        android:textColor="@color/White"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="442dp" />
 
     <ImageButton
         android:id="@+id/settingsbtn"
