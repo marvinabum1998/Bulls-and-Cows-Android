@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newgamebtn"
-        app:layout_constraintVertical_bias="0.194" />
+        app:layout_constraintVertical_bias="0.158" />
 
     <Button
         android:id="@+id/ibtBtn"

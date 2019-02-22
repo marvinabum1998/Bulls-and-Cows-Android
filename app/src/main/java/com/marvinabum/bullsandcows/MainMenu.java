@@ -53,7 +53,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void openNewGame() {
-        Intent intent3 = new Intent(this, NewGameScreen.class);
+        Intent intent3 = new Intent(this, Player1Screen.class);
         startActivity(intent3);
     }
 }

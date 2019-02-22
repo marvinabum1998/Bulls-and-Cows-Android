@@ -138,4 +138,5 @@ public class Bullsandcows extends Contract {
     public static Bullsandcows load(String contractAddress, Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider) {
         return new Bullsandcows(contractAddress, web3j, transactionManager, contractGasProvider);
     }
+
 }
