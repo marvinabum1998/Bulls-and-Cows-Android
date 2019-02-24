@@ -27,7 +27,7 @@ public class RulesScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_rules_screen);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         backBtn = (ImageButton) findViewById(R.id.backBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {

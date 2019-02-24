@@ -30,7 +30,7 @@ public class Main {
         TransactionReceipt future = receipt.send();
 
         System.out.println("The status is " + future.getStatus());
- 
+
         contract.checkGuess(new BigInteger("1234")).send();
 
         RemoteCall<BigInteger> rcCows =  contract.getCows();

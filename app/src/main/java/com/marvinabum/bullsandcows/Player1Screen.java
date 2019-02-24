@@ -8,7 +8,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
-
 import org.web3j.protocol.core.RemoteCall;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 
@@ -35,7 +34,7 @@ public class Player1Screen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_player1_screen);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         secretNumber = (EditText) findViewById(R.id.secretNumber);
 

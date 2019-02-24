@@ -20,7 +20,9 @@ contract Bullsandcows {
     }
     
     function checkGuess(uint guess) public {
-       uint count=4;
+       	bulls=0;
+	cows=0;
+	uint count=4;
         uint cur_digit=0;
         for(uint i=1000;i>=10;i=i/10) {
             cur_digit=guess/i;
