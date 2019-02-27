@@ -19,6 +19,8 @@
         <activity android:name=".MainMenu" />
         <activity android:name=".RulesScreen" />
         <activity android:name=".Player1Screen" />
-        <activity android:name=".Player2Screen"></activity>
+        <activity android:name=".Player2Screen" />
+        <activity android:name=".ResultsScreen"></activity>
     </application>
+
 </manifest>

@@ -3,11 +3,11 @@ package com.marvinabum.bullsandcows;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Player2Screen extends AppCompatActivity {
+public class Results extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player2_screen);
+        setContentView(R.layout.activity_results_screen);
     }
 }

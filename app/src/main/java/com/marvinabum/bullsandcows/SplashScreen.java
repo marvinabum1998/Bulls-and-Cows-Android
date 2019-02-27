@@ -15,12 +15,12 @@ public class SplashScreen extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+// This code is used to make the app fullscreen
         setContentView(R.layout.activity_splash_screen);
-        //getSupportActionBar().hide();
 
         LogoLauncher LogoLauncher = new LogoLauncher();
         LogoLauncher.start();
+// Creates an instance of LogoLauncher and starts it
     }
 
 
@@ -36,5 +36,6 @@ private class LogoLauncher extends Thread{
             startActivity(intent);
             SplashScreen.this.finish();
         }
+// This class displays the splash screen for 3.5 seconds before automatically transitioning to the main menu
 }
 }

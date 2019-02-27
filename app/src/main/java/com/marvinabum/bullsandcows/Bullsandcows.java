@@ -16,6 +16,7 @@ import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
 /**
+ * THIS CLASS IS THE WEB3J WRAPPER WHICH ALLOWS COMMUNICATION WITH THE SMART CONTRACT WRITTEN IN SOLIDITY
  * <p>Auto generated code.
  * <p><strong>Do not modify!</strong>
  * <p>Please use the <a href="https://docs.web3j.io/command_line.html">web3j command line tools</a>,

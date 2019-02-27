@@ -22,9 +22,10 @@ public class MainMenu extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main_menu);
-        //getSupportActionBar().hide();
 
         rulesBtn = (Button) findViewById(R.id.rulesBtn);
+        newGameBtn = (Button) findViewById(R.id.blockchainBtn);
+
         rulesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +33,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        newGameBtn = (Button) findViewById(R.id.newgameBtn);
+
         newGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,12 +44,12 @@ public class MainMenu extends AppCompatActivity {
 
 
     public void openRulesScreen() {
-        Intent intent2 = new Intent(this, RulesScreen.class);
-        startActivity(intent2);
+        Intent openRules = new Intent(this, Rules.class);
+        startActivity(openRules);
     }
 
     public void openNewGame() {
-        Intent intent3 = new Intent(this, Player1Screen.class);
-        startActivity(intent3);
+        Intent openNewGame = new Intent(this, Player1BC.class);
+        startActivity(openNewGame);
     }
 }

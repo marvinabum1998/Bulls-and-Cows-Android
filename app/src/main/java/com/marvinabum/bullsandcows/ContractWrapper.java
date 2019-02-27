@@ -17,12 +17,15 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
+import java.lang.String;
 
 public class ContractWrapper {
 
+// THIS CLASS ACTS AS A SEPARATE CLASS WITHIN THE APP TO REMOTELY LOAD THE CONTRACT FOR USE WITHIN THE GAME
+
     private final static String PRIVATE_KEY = "2A4072121BDD59246A2DB4E912F1D83B964A8127FC17C27869FE000986E055CF";
 
-    private final static String CONTRACT_ADDRESS = "0xbb5fbc49ad7d67577770a76ab04984bd1241bb99";
+    private final static String CONTRACT_ADDRESS = "0x1858cb2a2593f19adf489256e15a87a13164841c";
 
     private final static BigInteger GAS_LIMIT = BigInteger.valueOf(300000L);
 
@@ -37,28 +40,19 @@ public class ContractWrapper {
 
         Bullsandcows deployedAddress = loadContract(CONTRACT_ADDRESS, web3j, credentials);
 
-        System.out.println("The deployed contract address is " + deployedAddress);
+        System.out.println("The deployed contract address is " + deployedAddress.toString());
 
-        //Bullsandcows deployedAddress2 = loadContract(CONTRACT_ADDRESS, web3j, credentials);
         return deployedAddress;
-    }
 
-
-    private Credentials getCredentialsFromWallet() throws IOException, CipherException {
-        return WalletUtils.loadCredentials("passphrase", "wallet/path");
     }
 
     private Credentials getCredentialsFromPrivateKey() {
         return Credentials.create(PRIVATE_KEY);
     }
 
-    /* private String deployContract(Web3j web3j, Credentials credentials) throws Exception {
-        return Bullsandcows.deploy(web3j, credentials, GAS_PRICE, GAS_LIMIT)
-                .send()
-                .getContractAddress();
-    } */
-
     private Bullsandcows loadContract(String contractAddress, Web3j web3j, Credentials credentials){
         return Bullsandcows.load(contractAddress, web3j, credentials, GAS_PRICE, GAS_LIMIT);
     }
+
+
 }

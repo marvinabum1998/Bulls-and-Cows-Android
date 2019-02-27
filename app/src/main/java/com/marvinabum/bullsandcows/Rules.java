@@ -14,7 +14,7 @@ import org.web3j.protocol.Web3j;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
-public class RulesScreen extends AppCompatActivity {
+public class Rules extends AppCompatActivity {
 
     private ImageButton backBtn;
 
@@ -27,7 +27,6 @@ public class RulesScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_rules_screen);
-        //getSupportActionBar().hide();
 
         backBtn = (ImageButton) findViewById(R.id.backBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
