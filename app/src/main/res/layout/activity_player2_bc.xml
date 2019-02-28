@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".Player2Screen">
+    tools:context=".Player2Blockchain">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -15,37 +15,37 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/settingsbtn"
+        app:layout_constraintEnd_toStartOf="@+id/openSettings"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/banclogo" />
 
     <TextView
-        android:id="@+id/rulesdescription"
+        android:id="@+id/enterSecretNumber"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Please enter your secret number (4 numbers from 1-9, without duplicates)"
-        app:layout_constraintBottom_toTopOf="@+id/secretNumber"
+        android:text="Please guess Player1's secret number         (4 numbers from 1-9, without duplicates)"
+        app:layout_constraintBottom_toTopOf="@+id/blockchainSecretText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintVertical_bias="0.911" />
 
     <EditText
-        android:id="@+id/secretNumber"
+        android:id="@+id/blockchainSecretText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="84dp"
         android:ems="10"
-        android:hint="Secret Number"
+        android:hint="Guess"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/secretBtn"
+        android:id="@+id/submitGuessBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -61,11 +61,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/DarkPurple"
-        android:text="Enter"
+        android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secretNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText" />
 
     <TextView
         android:id="@+id/player1"
@@ -75,14 +75,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Player 1"
+        android:text="Player 2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/rulesdescription"
+        app:layout_constraintBottom_toTopOf="@+id/enterSecretNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.626" />
 
 </android.support.constraint.ConstraintLayout>

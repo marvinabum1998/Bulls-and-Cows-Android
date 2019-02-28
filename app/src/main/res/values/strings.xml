@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">BullsandCows</string>
+    <string name="enter_guess">Enter Guess</string>
+    <string name="enter">Enter</string>
+    <string name="your_guess">Your Guess</string>
+    <string name="java_description">The AI has chosen a secret number (4 numbers from 1-9, without duplicates)</string>
+    <string name="submit">Submit</string>
+    <string name="enter_new_guess">Enter New Guess</string>
+    <string name="java_results">You have: 1 Bull and 1 Cow. Please try again!</string>
+    <string name="your_results">Your Results</string>
+    <string name="guess">Guess</string>
+    <string name="player_1">Player 1</string>
+    <string name="continue1">Continue</string>
+    <string name="secret_number">Secret Number</string>
+    <string name="blockchain_description1">Please enter your secret number (4 numbers from 1-9, without duplicates)</string>
 </resources>

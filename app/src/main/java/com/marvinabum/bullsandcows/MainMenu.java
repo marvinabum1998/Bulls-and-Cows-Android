@@ -10,8 +10,10 @@ import android.view.View;
 
 public class MainMenu extends AppCompatActivity {
 
-    private Button rulesBtn;
-    private Button newGameBtn;
+    private Button openRules;
+    private Button openNewBlockchain;
+    private Button openNewJava;
+    private Button openInformation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +25,15 @@ public class MainMenu extends AppCompatActivity {
 
         setContentView(R.layout.activity_main_menu);
 
-        rulesBtn = (Button) findViewById(R.id.rulesBtn);
-        newGameBtn = (Button) findViewById(R.id.blockchainBtn);
 
-        rulesBtn.setOnClickListener(new View.OnClickListener() {
+
+        openRules = (Button) findViewById(R.id.openRules);
+        openNewBlockchain = (Button) findViewById(R.id.openNewBlockchain);
+        openNewJava = (Button) findViewById(R.id.openNewJava);
+        openInformation = (Button) findViewById(R.id.openInformation);
+
+
+        openRules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRulesScreen();
@@ -34,10 +41,17 @@ public class MainMenu extends AppCompatActivity {
         });
 
 
-        newGameBtn.setOnClickListener(new View.OnClickListener() {
+        openNewBlockchain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewGame();
+                openNewBlockchain();
+            }
+        });
+
+        openNewJava.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewJava();
             }
         });
     }
@@ -48,8 +62,12 @@ public class MainMenu extends AppCompatActivity {
         startActivity(openRules);
     }
 
-    public void openNewGame() {
-        Intent openNewGame = new Intent(this, Player1BC.class);
-        startActivity(openNewGame);
+    public void openNewBlockchain() {
+        Intent openNewBlockchain = new Intent(this, Player1Blockchain.class);
+        startActivity(openNewBlockchain);
+    }
+
+    public void openNewJava() {
+        Intent openNewJava = new Intent(this, JavaGuess.class);
     }
 }

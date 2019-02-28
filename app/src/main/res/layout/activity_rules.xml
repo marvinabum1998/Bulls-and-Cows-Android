@@ -8,7 +8,7 @@
     tools:context=".RulesScreen">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/banclogo"
         android:layout_width="103dp"
         android:layout_height="91dp"
         android:layout_marginStart="112dp"
@@ -33,7 +33,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/banclogo"
         app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,6 +56,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/banclogo" />
 
 </android.support.constraint.ConstraintLayout>

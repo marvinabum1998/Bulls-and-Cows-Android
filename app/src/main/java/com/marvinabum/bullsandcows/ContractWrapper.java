@@ -13,6 +13,8 @@ import org.web3j.protocol.core.methods.response.Web3ClientVersion;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
+import org.web3j.tx.gas.ContractGasProvider;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -31,7 +33,11 @@ public class ContractWrapper {
 
     private final static BigInteger GAS_PRICE = BigInteger.valueOf(2000000000L);
 
+
     public Bullsandcows getContract() throws Exception {
+
+        System.out.println("inside getContract()");
+
         Web3j web3j = Web3j.build(new HttpService("https://kovan.infura.io/"));
         Web3ClientVersion web3ClientVersion = web3j.web3ClientVersion().send();
         System.out.println(web3ClientVersion.getWeb3ClientVersion());
