@@ -69,5 +69,6 @@ public class MainMenu extends AppCompatActivity {
 
     public void openNewJava() {
         Intent openNewJava = new Intent(this, JavaGuess.class);
+        startActivity(openNewJava);
     }
 }

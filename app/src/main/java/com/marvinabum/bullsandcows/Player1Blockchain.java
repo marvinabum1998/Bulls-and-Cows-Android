@@ -21,9 +21,8 @@ public class Player1Blockchain extends AppCompatActivity {
 
     private Button submitBlockchainSecret;
     private Button continueBtn1;
-    private ImageButton backBtn2;
+    private ImageButton player1ToMainMenu;
     private EditText secretNumber1;
-    //public Bullsandcows contract;
     private BigInteger secret;
 
     /*public Bullsandcows GetContract() throws Exception {
@@ -82,8 +81,8 @@ public class Player1Blockchain extends AppCompatActivity {
 
 
 
-        backBtn2 = (ImageButton) findViewById(R.id.backBtn2);
-        backBtn2.setOnClickListener(new View.OnClickListener() {
+        player1ToMainMenu = (ImageButton) findViewById(R.id.player1ToMainMenu);
+        player1ToMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainMenu();

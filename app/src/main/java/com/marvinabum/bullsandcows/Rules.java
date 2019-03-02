@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class Rules extends AppCompatActivity {
 
-    private ImageButton backBtn;
+    private ImageButton rulesToMainMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,8 @@ public class Rules extends AppCompatActivity {
 
         setContentView(R.layout.activity_rules);
 
-        backBtn = (ImageButton) findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        rulesToMainMenu = (ImageButton) findViewById(R.id.rulesToMainMenu);
+        rulesToMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainMenu();

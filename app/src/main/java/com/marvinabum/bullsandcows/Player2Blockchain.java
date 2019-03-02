@@ -22,7 +22,6 @@ public class Player2Blockchain extends AppCompatActivity {
     private EditText guessNumber1;
     //public Bullsandcows contract;
     private BigInteger guess;
-    private int count=0;
 
     /*public Bullsandcows GetContract() throws Exception {
         if (this.contract== null) {
@@ -89,7 +88,6 @@ public class Player2Blockchain extends AppCompatActivity {
                 openResults();
             }
         });
-
     }
 
     public void openResults() {
