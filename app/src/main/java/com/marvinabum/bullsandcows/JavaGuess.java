@@ -35,18 +35,16 @@ public class JavaGuess extends AppCompatActivity {
         javaToMainMenu = (ImageButton) findViewById(R.id.javaToMainMenu);
 
         javaGuessBtn.setOnClickListener(new View.OnClickListener() {
-            //@SuppressLint("ShowToast")
             @Override
             public void onClick(View v) {
-                /* BullsandcowsJava banc = new BullsandcowsJava();
+                BullsandcowsJava banc = new BullsandcowsJava();
                 BullsandcowsJava.guess = Integer.valueOf(aiGuessET.getText().toString());
-                Toast.makeText(getApplicationContext(), "The guess you entered is " + BullsandcowsJava.guess, Toast.LENGTH_LONG); */
+
                 openJavaResults();
             }
         });
 
         javaToMainMenu.setOnClickListener(new View.OnClickListener() {
-            //@SuppressLint("ShowToast")
             @Override
             public void onClick(View v) {
                 openMainMenu();

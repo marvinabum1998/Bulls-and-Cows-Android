@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/banclogo" />
 
     <TextView
-        android:id="@+id/enterSecretNumber"
+        android:id="@+id/blockchainResultText"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -92,7 +92,7 @@
         android:text="@string/your_guess"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/enterSecretNumber"
+        app:layout_constraintBottom_toTopOf="@+id/blockchainResultText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

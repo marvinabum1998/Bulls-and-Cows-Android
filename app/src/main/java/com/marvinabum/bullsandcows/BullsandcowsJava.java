@@ -8,14 +8,10 @@ import java.util.Random;
 class BullsandcowsJava {
 
     static Random rand = new Random();
-    static int number;
+    static int number = rand.nextInt(10000);
     static int guess;
     static int bulls = 0;
     static int cows = 0;
-
-    public void generateRandomNumber() {
-        int number = rand.nextInt(10000);
-    }
 
     public void calculate() {
 

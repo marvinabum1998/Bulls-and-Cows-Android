@@ -18,20 +18,11 @@ import java.math.BigInteger;
 
 public class Player2Blockchain extends AppCompatActivity {
 
-    private Button submitGuessBtn;
+    private Button submitBlockchainGuess;
+    private Button continueToBlockchainResults;
     private EditText guessNumber1;
     //public Bullsandcows contract;
     private BigInteger guess;
-
-    /*public Bullsandcows GetContract() throws Exception {
-        if (this.contract== null) {
-            ContractWrapper wrapper = new ContractWrapper();
-            System.out.println("I am setting the contract " + contract);
-            this.contract = wrapper.getContract();
-        }
-        return this.contract;
-
-    }*/
 
     private class ContractAsyncTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... params) {
@@ -43,12 +34,10 @@ public class Player2Blockchain extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             RemoteCall<TransactionReceipt> receipt = contract.checkGuess(new BigInteger(params[0]));
-            System.out.println("The guess is " + params[0]);
-
             try {
                 TransactionReceipt send = receipt.send();
+                System.out.println("The guess is " + params[0]);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -63,7 +52,10 @@ public class Player2Blockchain extends AppCompatActivity {
         protected void onPostExecute(String result) {
             //showDialog("Downloaded " + result + " bytes");
             //Toast.makeText(getApplicationContext(), "Completed"), Toast.LENGTH_LONG;
+
             super.onPostExecute(result);
+            continueToBlockchainResults.setEnabled(true);
+
         }
     }
 
@@ -78,13 +70,21 @@ public class Player2Blockchain extends AppCompatActivity {
         setContentView(R.layout.activity_player2_bc);
 
 
-        submitGuessBtn = (Button) findViewById(R.id.submitGuessBtn);
-        submitGuessBtn.setOnClickListener(new View.OnClickListener() {
+        submitBlockchainGuess = (Button) findViewById(R.id.submitBlockchainGuess);
+        submitBlockchainGuess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 guessNumber1 = (EditText) findViewById(R.id.blockchainSecretText);
                 guess = new BigInteger(guessNumber1.getText().toString());
                 new ContractAsyncTask().execute(guessNumber1.getText().toString());
+            }
+        });
+
+        continueToBlockchainResults = (Button) findViewById(R.id.continueToBlockchainResults);
+        continueToBlockchainResults.setEnabled(false);
+        continueToBlockchainResults.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 openResults();
             }
         });

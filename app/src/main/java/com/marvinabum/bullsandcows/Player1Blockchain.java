@@ -20,7 +20,7 @@ import java.math.BigInteger;
 public class Player1Blockchain extends AppCompatActivity {
 
     private Button submitBlockchainSecret;
-    private Button continueBtn1;
+    private Button blockchainSecretContinue;
     private ImageButton player1ToMainMenu;
     private EditText secretNumber1;
     private BigInteger secret;
@@ -65,6 +65,7 @@ public class Player1Blockchain extends AppCompatActivity {
         protected void onPostExecute(String result) {
             //showDialog("Downloaded " + result + " bytes");
             //Toast.makeText(getApplicationContext(), "Completed"), Toast.LENGTH_LONG;
+            blockchainSecretContinue.setEnabled(true);
             super.onPostExecute(result);
         }
     }
@@ -90,13 +91,21 @@ public class Player1Blockchain extends AppCompatActivity {
         });
 
 
-        continueBtn1 = (Button) findViewById(R.id.blockchainSecretContinue);
-        continueBtn1.setOnClickListener(new View.OnClickListener() {
+        submitBlockchainSecret = (Button) findViewById(R.id.submitBlockchainSecret);
+        submitBlockchainSecret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 secretNumber1 = (EditText) findViewById(R.id.blockchainSecretText);
                 secret = new BigInteger(secretNumber1.getText().toString());
                 new ContractAsyncTask().execute(secretNumber1.getText().toString());
+            }
+        });
+
+        blockchainSecretContinue = (Button) findViewById(R.id.blockchainSecretContinue);
+        blockchainSecretContinue.setEnabled(false);
+        blockchainSecretContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 openPlayer2Blockchain();
             }
         });

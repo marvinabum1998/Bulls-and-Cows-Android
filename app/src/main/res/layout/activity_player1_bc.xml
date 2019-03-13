@@ -8,6 +8,23 @@
     android:background="@drawable/gradient"
     tools:context=".Player1Blockchain">
 
+    <Button
+        android:id="@+id/submitBlockchainSecret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/DarkPurple"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blockchainSecretContinue"
+        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText"
+        app:layout_constraintVertical_bias="0.714" />
+
     <ImageButton
         android:id="@+id/player1ToMainMenu"
         android:layout_width="wrap_content"
@@ -39,7 +56,7 @@
         app:srcCompat="@drawable/banclogo" />
 
     <TextView
-        android:id="@+id/enterSecretNumber"
+        android:id="@+id/blockchainResultText"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -84,8 +101,10 @@
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText" />
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText"
+        app:layout_constraintVertical_bias="0.714" />
 
     <TextView
         android:id="@+id/player1"
@@ -98,7 +117,7 @@
         android:text="@string/player_1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/enterSecretNumber"
+        app:layout_constraintBottom_toTopOf="@+id/blockchainResultText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

@@ -22,20 +22,20 @@
         app:srcCompat="@drawable/banclogo" />
 
     <TextView
-        android:id="@+id/enterSecretNumber"
+        android:id="@+id/blockchainResultText"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Please guess Player1's secret number         (4 numbers from 1-9, without duplicates)"
+        android:text="Please guess Player1's secret number         (4 numbers from 1-9, without duplicates. Please click the submit button and wait for the smartt contract to calculate the number of bulls and cows, which will be done when the continue button is clickable  "
         app:layout_constraintBottom_toTopOf="@+id/blockchainSecretText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintVertical_bias="0.78" />
 
     <EditText
         android:id="@+id/blockchainSecretText"
@@ -53,7 +53,24 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/submitGuessBtn"
+        android:id="@+id/submitBlockchainGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/DarkPurple"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/continueToBlockchainResults"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <Button
+        android:id="@+id/continueToBlockchainResults"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -64,8 +81,10 @@
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText" />
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/player1"
@@ -78,11 +97,11 @@
         android:text="Player 2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/enterSecretNumber"
+        app:layout_constraintBottom_toTopOf="@+id/blockchainResultText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintVertical_bias="0.744" />
 
 </android.support.constraint.ConstraintLayout>
