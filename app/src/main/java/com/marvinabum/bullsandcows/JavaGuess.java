@@ -10,12 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import static com.marvinabum.bullsandcows.BullsandcowsJava.bulls;
+import static com.marvinabum.bullsandcows.BullsandcowsJava.cows;
+import static com.marvinabum.bullsandcows.BullsandcowsJava.number;
+import static com.marvinabum.bullsandcows.BullsandcowsJava.rand;
+
 public class JavaGuess extends AppCompatActivity {
 
-    private Button javaGuessBtn;
+    private Button submitJavaGuess;
+    private Button javaGuessContinue;
     private ImageButton javaToMainMenu;
     private EditText aiGuessET;
-    private int javaGuess;
 
 
     @Override
@@ -27,19 +32,26 @@ public class JavaGuess extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_java_guess);
-
-        javaGuessBtn = (Button) findViewById(R.id.javaGuessBtn);
-
         aiGuessET = (EditText) findViewById(R.id.blockchainSecretText);
-
         javaToMainMenu = (ImageButton) findViewById(R.id.javaToMainMenu);
 
-        javaGuessBtn.setOnClickListener(new View.OnClickListener() {
+        submitJavaGuess = (Button) findViewById(R.id.submitJavaGuess);
+        submitJavaGuess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BullsandcowsJava banc = new BullsandcowsJava();
+                BullsandcowsJava.number = rand.nextInt(10000);
+                System.out.println(number);
                 BullsandcowsJava.guess = Integer.valueOf(aiGuessET.getText().toString());
+                javaGuessContinue.setEnabled(true);
+            }
+        });
 
+        javaGuessContinue = (Button) findViewById(R.id.javaGuessContinue);
+        javaGuessContinue.setEnabled(false);
+        javaGuessContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 openJavaResults();
             }
         });

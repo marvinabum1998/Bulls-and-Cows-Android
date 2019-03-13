@@ -9,13 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-
 import org.web3j.protocol.core.RemoteCall;
-import org.web3j.protocol.core.methods.response.TransactionReceipt;
-
 import java.math.BigInteger;
-
-import static java.lang.Thread.sleep;
 
 public class BlockchainResults extends AppCompatActivity {
 
@@ -26,7 +21,7 @@ public class BlockchainResults extends AppCompatActivity {
     private Bullsandcows contract;
     private BigInteger bulls;
     private BigInteger cows;
-
+    private int count = 1;
 
     private class ContractAsyncTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... params) {
@@ -41,7 +36,7 @@ public class BlockchainResults extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println("The status is " + cows + " cows");
+                System.out.println("You have " + cows + " cows");
 
                 RemoteCall<BigInteger> rcBulls = contract.getBulls();
                 try {
@@ -49,7 +44,7 @@ public class BlockchainResults extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println("The status is " + bulls + " bulls");
+                System.out.println("You have " + bulls + " bulls");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -65,10 +60,9 @@ public class BlockchainResults extends AppCompatActivity {
         protected void onPostExecute(String result) {
             //showDialog("Downloaded " + result + " bytes");
             super.onPostExecute(result);
-            blockchainResultText.setText("You have: (" + bulls + ") Bulls and (" + cows + ") Cows. Please try again!" );
+            blockchainResultText.setText("You have: (" + bulls + ") Bulls and (" + cows + ") Cows after " + count + " attempts. Please try again!" );
         }
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,17 +74,10 @@ public class BlockchainResults extends AppCompatActivity {
 
         setContentView(R.layout.activity_blockchain_results);
 
-        blockchainResultText = (TextView) findViewById(R.id.blockchainResultText);
+        blockchainResultText = (TextView) findViewById(R.id.javaResultText);
 
         new ContractAsyncTask().execute();
-
-        showBlockchainResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //new ContractAsyncTask().execute();
-                //blockchainResultText.setText("You have: (" + bulls + ") Bulls and (" + cows + ") Cows. Please try again!" );
-            }
-        });
+        count++;
 
         quitToMainMenuBC = (Button) findViewById(R.id.quitToMainMenuBC);
         //blockchainResultText = (TextView) findViewById(R.id.blockchainResultText) ;

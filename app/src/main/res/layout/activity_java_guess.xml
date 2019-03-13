@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/banclogo" />
 
     <TextView
-        android:id="@+id/blockchainResultText"
+        android:id="@+id/javaResultText"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -67,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/javaGuessBtn"
+        android:id="@+id/javaGuessContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,11 +75,30 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/DarkPurple"
-        android:text="@string/submit"
+        android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText" />
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText"
+        app:layout_constraintVertical_bias="0.519" />
+
+    <Button
+        android:id="@+id/submitJavaGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/DarkPurple"
+        android:text="Submit Guess"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blockchainSecretText"
+        app:layout_constraintVertical_bias="0.519" />
 
     <TextView
         android:id="@+id/yourGuess"
@@ -92,7 +111,7 @@
         android:text="@string/your_guess"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/blockchainResultText"
+        app:layout_constraintBottom_toTopOf="@+id/javaResultText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

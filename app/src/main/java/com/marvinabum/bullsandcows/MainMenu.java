@@ -29,7 +29,7 @@ public class MainMenu extends AppCompatActivity {
 
         openRules = (Button) findViewById(R.id.openRules);
         openNewBlockchain = (Button) findViewById(R.id.openNewBlockchain);
-        openNewJava = (Button) findViewById(R.id.openNewJava);
+        //openNewJava = (Button) findViewById(R.id.openNewJava);
         openInformation = (Button) findViewById(R.id.openInformation);
 
 

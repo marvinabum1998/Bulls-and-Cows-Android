@@ -8,13 +8,15 @@ import java.util.Random;
 class BullsandcowsJava {
 
     static Random rand = new Random();
-    static int number = rand.nextInt(10000);
+    static int number;
     static int guess;
     static int bulls = 0;
     static int cows = 0;
 
     public void calculate() {
 
+        bulls=0;
+        cows=0;
         HashMap<Integer, Integer> positionsMap = new HashMap<Integer, Integer>();
         int cur_digit = 0;
         int count = 3;

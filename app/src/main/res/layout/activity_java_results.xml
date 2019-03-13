@@ -21,7 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/blockchainResultText"
+        app:layout_constraintTop_toTopOf="@+id/javaResultText"
         app:layout_constraintVertical_bias="0.96" />
 
     <Button
@@ -49,36 +49,19 @@
         app:srcCompat="@drawable/banclogo" />
 
     <TextView
-        android:id="@+id/blockchainResultText"
+        android:id="@+id/javaResultText"
         android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Congratulations, you have guessed the right number after (1) attempt"
         app:layout_constraintBottom_toTopOf="@+id/quitToMainMenuJava"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.701" />
-
-    <Button
-        android:id="@+id/showJavaResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/DarkPurple"
-        android:text="Show Result"
-        app:layout_constraintBottom_toTopOf="@+id/blockchainResultText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yourResults"
-        app:layout_constraintVertical_bias="0.488" />
 
     <TextView
         android:id="@+id/yourResults"
@@ -91,7 +74,7 @@
         android:text="@string/your_results"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/blockchainResultText"
+        app:layout_constraintBottom_toTopOf="@+id/javaResultText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
