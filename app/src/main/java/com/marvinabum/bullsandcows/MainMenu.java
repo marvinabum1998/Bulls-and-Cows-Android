@@ -48,12 +48,12 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        openNewJava.setOnClickListener(new View.OnClickListener() {
+        /*openNewJava.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNewJava();
             }
-        });
+        }); */
     }
 
 

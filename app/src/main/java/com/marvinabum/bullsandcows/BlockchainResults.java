@@ -21,7 +21,7 @@ public class BlockchainResults extends AppCompatActivity {
     private Bullsandcows contract;
     private BigInteger bulls;
     private BigInteger cows;
-    private int count = 1;
+    private static int count=1;
 
     private class ContractAsyncTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... params) {
@@ -60,7 +60,13 @@ public class BlockchainResults extends AppCompatActivity {
         protected void onPostExecute(String result) {
             //showDialog("Downloaded " + result + " bytes");
             super.onPostExecute(result);
-            blockchainResultText.setText("You have: (" + bulls + ") Bulls and (" + cows + ") Cows after " + count + " attempts. Please try again!" );
+            if(Integer.valueOf(bulls.toString()) == 4) {
+                blockchainResultText.setText("Congratulations, you have guessed the right number!" );
+                newGuessBlockchain.setEnabled(false);
+            }
+            else {
+                blockchainResultText.setText("You have: (" + bulls + ") Bulls and (" + cows + ") Cows after (" + count + ") attempts. Please try again!" );
+            }
         }
     }
 
@@ -77,13 +83,14 @@ public class BlockchainResults extends AppCompatActivity {
         blockchainResultText = (TextView) findViewById(R.id.javaResultText);
 
         new ContractAsyncTask().execute();
-        count++;
 
         quitToMainMenuBC = (Button) findViewById(R.id.quitToMainMenuBC);
         //blockchainResultText = (TextView) findViewById(R.id.blockchainResultText) ;
         quitToMainMenuBC.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { openMainMenu();
+            public void onClick(View v) {
+                count = 1;
+                openMainMenu();
             }
         });
 
@@ -91,7 +98,9 @@ public class BlockchainResults extends AppCompatActivity {
         //blockchainResultText = (TextView) findViewById(R.id.blockchainResultText) ;
         newGuessBlockchain.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { openPlayer2Screen();
+            public void onClick(View v) {
+                count++;
+                openPlayer2Screen();
             }
         });
 

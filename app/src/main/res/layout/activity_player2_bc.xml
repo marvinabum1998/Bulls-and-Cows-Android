@@ -29,7 +29,7 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Please guess Player1's secret number         (4 numbers from 1-9, without duplicates. Please click the submit button and wait for the smartt contract to calculate the number of bulls and cows, which will be done when the continue button is clickable  "
+        android:text="Please guess Player1's secret number         (4 numbers from 1-9, without duplicates. Please click the submit button and wait for the smart contract to calculate the number of bulls and cows, which will be done when the continue button is clickable  "
         app:layout_constraintBottom_toTopOf="@+id/blockchainSecretText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.202"

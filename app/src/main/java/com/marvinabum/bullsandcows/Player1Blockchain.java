@@ -65,8 +65,8 @@ public class Player1Blockchain extends AppCompatActivity {
         protected void onPostExecute(String result) {
             //showDialog("Downloaded " + result + " bytes");
             //Toast.makeText(getApplicationContext(), "Completed"), Toast.LENGTH_LONG;
-            blockchainSecretContinue.setEnabled(true);
             super.onPostExecute(result);
+            blockchainSecretContinue.setEnabled(true);
         }
     }
 
