@@ -9,8 +9,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import org.web3j.protocol.core.RemoteCall;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import java.math.BigInteger;
@@ -21,7 +19,6 @@ public class Player2Blockchain extends AppCompatActivity {
     private Button submitBlockchainGuess;
     private Button continueToBlockchainResults;
     private EditText guessNumber1;
-    //public Bullsandcows contract;
     private BigInteger guess;
 
     private class ContractAsyncTask extends AsyncTask<String, Void, String> {
@@ -37,7 +34,7 @@ public class Player2Blockchain extends AppCompatActivity {
             RemoteCall<TransactionReceipt> receipt = contract.checkGuess(new BigInteger(params[0]));
             try {
                 TransactionReceipt send = receipt.send();
-                System.out.println("The guess is " + params[0]);
+                //System.out.println("The guess is " + params[0]);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -45,14 +42,7 @@ public class Player2Blockchain extends AppCompatActivity {
             return "Success";
         }
 
-        protected void onProgressUpdate(Integer... progress) {
-            //setProgressPercent(progress[0]);
-        }
-
         protected void onPostExecute(String result) {
-            //showDialog("Downloaded " + result + " bytes");
-            //Toast.makeText(getApplicationContext(), "Completed"), Toast.LENGTH_LONG;
-
             super.onPostExecute(result);
             continueToBlockchainResults.setEnabled(true);
 

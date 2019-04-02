@@ -1,5 +1,10 @@
 package com.marvinabum.bullsandcows;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -17,12 +22,10 @@ public class SplashScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 // This code is used to make the app fullscreen
         setContentView(R.layout.activity_splash_screen);
-
         LogoLauncher LogoLauncher = new LogoLauncher();
         LogoLauncher.start();
 // Creates an instance of LogoLauncher and starts it
     }
-
 
 private class LogoLauncher extends Thread{
         public void run() {
@@ -39,3 +42,8 @@ private class LogoLauncher extends Thread{
 // This class displays the splash screen for 3.5 seconds before automatically transitioning to the main menu
 }
 }
+
+
+
+
+

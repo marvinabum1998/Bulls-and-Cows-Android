@@ -16,9 +16,7 @@ public class BlockchainResults extends AppCompatActivity {
 
     private Button quitToMainMenuBC;
     private Button newGuessBlockchain;
-    private Button showBlockchainResult;
     private TextView blockchainResultText;
-    private Bullsandcows contract;
     private BigInteger bulls;
     private BigInteger cows;
     private static int count=1;
@@ -61,7 +59,7 @@ public class BlockchainResults extends AppCompatActivity {
             //showDialog("Downloaded " + result + " bytes");
             super.onPostExecute(result);
             if(Integer.valueOf(bulls.toString()) == 4) {
-                blockchainResultText.setText("Congratulations, you have guessed the right number!" );
+                blockchainResultText.setText("Congratulations, you have guessed the right number! Your high score is (" + count + ") attempts");
                 newGuessBlockchain.setEnabled(false);
             }
             else {

@@ -9,9 +9,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
-import static com.marvinabum.bullsandcows.BullsandcowsJava.bulls;
-import static com.marvinabum.bullsandcows.BullsandcowsJava.cows;
 import static com.marvinabum.bullsandcows.BullsandcowsJava.number;
 import static com.marvinabum.bullsandcows.BullsandcowsJava.rand;
 

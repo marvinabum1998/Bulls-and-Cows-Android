@@ -25,15 +25,6 @@ public class Player1Blockchain extends AppCompatActivity {
     private EditText secretNumber1;
     private BigInteger secret;
 
-    /*public Bullsandcows GetContract() throws Exception {
-        if (this.contract== null) {
-            ContractWrapper wrapper = new ContractWrapper();
-            System.out.println("I am setting the contract " + contract);
-            this.contract = wrapper.getContract();
-        }
-        return this.contract;
-    }*/
-
     private class ContractAsyncTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... params) {
@@ -47,7 +38,7 @@ public class Player1Blockchain extends AppCompatActivity {
             }
 
             RemoteCall<TransactionReceipt> receipt = contract.setPosition(new BigInteger(params[0]));
-            System.out.println("The secret is " + params[0]);
+            //System.out.println("The secret is " + params[0]);
 
             try {
                 TransactionReceipt send = receipt.send();
@@ -58,13 +49,8 @@ public class Player1Blockchain extends AppCompatActivity {
             return "Success";
         }
 
-        protected void onProgressUpdate(Integer... progress) {
-            //setProgressPercent(progress[0]);
-        }
-
         protected void onPostExecute(String result) {
             //showDialog("Downloaded " + result + " bytes");
-            //Toast.makeText(getApplicationContext(), "Completed"), Toast.LENGTH_LONG;
             super.onPostExecute(result);
             blockchainSecretContinue.setEnabled(true);
         }
