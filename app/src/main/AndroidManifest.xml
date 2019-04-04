@@ -17,15 +17,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu" />
-        <activity android:name=".Rules" />
         <activity android:name=".Player1Blockchain" />
         <activity android:name=".Player2Blockchain" />
-        <activity android:name=".JavaGuess" />
         <activity android:name=".BlockchainResults" />
-        <activity android:name=".JavaResults"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
+
+
+
+

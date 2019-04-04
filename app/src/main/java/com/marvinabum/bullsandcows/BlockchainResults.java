@@ -34,7 +34,6 @@ public class BlockchainResults extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println("You have " + cows + " cows");
 
                 RemoteCall<BigInteger> rcBulls = contract.getBulls();
                 try {
@@ -42,7 +41,6 @@ public class BlockchainResults extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println("You have " + bulls + " bulls");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -51,12 +49,7 @@ public class BlockchainResults extends AppCompatActivity {
                 return "Success";
             }
 
-        protected void onProgressUpdate(Integer... progress) {
-            //setProgressPercent(progress[0]);
-        }
-
         protected void onPostExecute(String result) {
-            //showDialog("Downloaded " + result + " bytes");
             super.onPostExecute(result);
             if(Integer.valueOf(bulls.toString()) == 4) {
                 blockchainResultText.setText("Congratulations, you have guessed the right number! Your high score is (" + count + ") attempts");
@@ -83,7 +76,6 @@ public class BlockchainResults extends AppCompatActivity {
         new ContractAsyncTask().execute();
 
         quitToMainMenuBC = (Button) findViewById(R.id.quitToMainMenuBC);
-        //blockchainResultText = (TextView) findViewById(R.id.blockchainResultText) ;
         quitToMainMenuBC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +85,6 @@ public class BlockchainResults extends AppCompatActivity {
         });
 
         newGuessBlockchain = (Button) findViewById(R.id.newGuessBlockchain);
-        //blockchainResultText = (TextView) findViewById(R.id.blockchainResultText) ;
         newGuessBlockchain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

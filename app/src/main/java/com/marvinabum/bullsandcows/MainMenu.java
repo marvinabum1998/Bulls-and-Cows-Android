@@ -66,12 +66,6 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        /*openNewJava.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNewJava();
-            }
-        }); */
 
         openInformation = (Button) findViewById(R.id.openInformation);
         openInformation.setOnClickListener(new View.OnClickListener() {
@@ -89,19 +83,14 @@ public class MainMenu extends AppCompatActivity {
         return networkInfo != null && networkInfo.isConnected();
     }
 
-    public void openRulesScreen() {
-        Intent openRules = new Intent(Intent.ACTION_VIEW, Uri.parse("https://marvinabum.com/game-rules"));
-        startActivity(openRules);
-    }
-
     public void openNewBlockchain() {
         Intent openNewBlockchain = new Intent(this, Player1Blockchain.class);
         startActivity(openNewBlockchain);
     }
 
-    public void openNewJava() {
-        Intent openNewJava = new Intent(this, JavaGuess.class);
-        startActivity(openNewJava);
+    public void openRulesScreen() {
+        Intent openRules = new Intent(Intent.ACTION_VIEW, Uri.parse("https://marvinabum.com/game-rules"));
+        startActivity(openRules);
     }
 
     public void openInformationPage() {

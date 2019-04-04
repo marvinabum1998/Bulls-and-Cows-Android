@@ -34,7 +34,6 @@ public class Player2Blockchain extends AppCompatActivity {
             RemoteCall<TransactionReceipt> receipt = contract.checkGuess(new BigInteger(params[0]));
             try {
                 TransactionReceipt send = receipt.send();
-                //System.out.println("The guess is " + params[0]);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -45,7 +44,6 @@ public class Player2Blockchain extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             continueToBlockchainResults.setEnabled(true);
-
         }
     }
 
@@ -64,6 +62,7 @@ public class Player2Blockchain extends AppCompatActivity {
         submitBlockchainGuess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                submitBlockchainGuess.setEnabled(false);
                 guessNumber1 = (EditText) findViewById(R.id.blockchainSecretText);
                 guess = new BigInteger(guessNumber1.getText().toString());
                 new ContractAsyncTask().execute(guessNumber1.getText().toString());

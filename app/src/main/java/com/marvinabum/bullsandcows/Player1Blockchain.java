@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import org.web3j.protocol.core.RemoteCall;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import java.math.BigInteger;
@@ -38,7 +37,6 @@ public class Player1Blockchain extends AppCompatActivity {
             }
 
             RemoteCall<TransactionReceipt> receipt = contract.setPosition(new BigInteger(params[0]));
-            //System.out.println("The secret is " + params[0]);
 
             try {
                 TransactionReceipt send = receipt.send();
@@ -50,7 +48,6 @@ public class Player1Blockchain extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-            //showDialog("Downloaded " + result + " bytes");
             super.onPostExecute(result);
             blockchainSecretContinue.setEnabled(true);
         }
@@ -66,8 +63,6 @@ public class Player1Blockchain extends AppCompatActivity {
 
         setContentView(R.layout.activity_player1_bc);
 
-
-
         player1ToMainMenu = (ImageButton) findViewById(R.id.player1ToMainMenu);
         player1ToMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,11 +71,11 @@ public class Player1Blockchain extends AppCompatActivity {
             }
         });
 
-
         submitBlockchainSecret = (Button) findViewById(R.id.submitBlockchainSecret);
         submitBlockchainSecret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                submitBlockchainSecret.setEnabled(false);
                 secretNumber1 = (EditText) findViewById(R.id.blockchainSecretText);
                 secret = new BigInteger(secretNumber1.getText().toString());
                 new ContractAsyncTask().execute(secretNumber1.getText().toString());
